@@ -1,0 +1,17 @@
+[
+  {
+    "host": "msk1-1.unix.nspk.ru",
+    "schema": "profiles_fo_1",
+    "inProgress": false
+  },
+  {
+    "host": "msk1-2.unix.nspk.ru",
+    "schema": "profiles_fo_2",
+    "inProgress": false
+  },
+  {
+    "host": "msk1-3.unix.nspk.ru",
+    "schema": "profiles_fo_3",
+    "inProgress": false
+  }
+]
