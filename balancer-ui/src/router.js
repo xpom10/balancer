@@ -10,13 +10,13 @@ export default new Router({
     routes: [
         {
             path: "/",
-            name: "hosts",
-            alias: "/customer",
+            name: "HostList",
+            alias: "/hosts",
             component: HostList,
             children: [
                 {
-                    path: "/hosts/:host",
-                    name: "host-details",
+                    path: "/hosts/:id",
+                    name: "HostDetails",
                     component: HostDetails,
                     props: true
                 }

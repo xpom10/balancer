@@ -13,6 +13,7 @@ import ru.nspk.testAutomation.services.BalancerService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor(onConstructor = @__({@Autowired}))
 public class BalancerController {
 

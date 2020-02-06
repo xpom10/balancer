@@ -3,10 +3,10 @@
         <div class="col-md-6">
             <h4>Host List</h4>
             <ul>
-                <li v-for="(host, index) in hosts" :key="index">
+                <li v-for="(host, index) in hosts" :key="index" :host="host">
                     <router-link :to="{
-                            name: 'host-details',
-                            params: { host: host.host, schema: host.schema, inProgress: host.inProgress }
+                            name: 'HostDetails',
+                            params: { id: host.host, hostDetails: host }
                         }">
                         {{host.host}}
                     </router-link>
@@ -23,7 +23,7 @@
     import http from "../http-common";
 
     export default {
-        name: "customers-list",
+        name: "HostsList",
         data() {
             return {
                 hosts: []
