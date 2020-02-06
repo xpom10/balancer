@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.4.0",
     "core-js": "^3.4.4",
-    "vue": "^2.6.10",
+    "jquery": "^3.4.1",
+    "vue": "^2.6.11",
     "vue-router": "^3.1.5"
   },
   "devDependencies": {
@@ -32,7 +35,7 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console":"off"
+      "no-console": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"

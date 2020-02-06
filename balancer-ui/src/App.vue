@@ -4,7 +4,7 @@
             <h1>Balancer</h1>
         </div>
         <nav>
-            <router-link class="btn btn-primary" to="/">Hosts</router-link>
+            <b-button variant="outline-primary" to="/">Hosts</b-button>
         </nav>
         <br/>
         <router-view/>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+
     export default {
         name: "app"
     };
@@ -21,13 +22,5 @@
     .site-info {
         color: blue;
         margin-bottom: 20px;
-    }
-
-    .btn-primary {
-        margin-right: 5px;
-    }
-
-    .container-fluid {
-        text-align: center;
     }
 </style>

@@ -2,16 +2,12 @@
     <div class="list row">
         <div class="col-md-6">
             <h4>Host List</h4>
-            <ul>
-                <li v-for="(host, index) in hosts" :key="index" :host="host">
-                    <router-link :to="{
-                            name: 'HostDetails',
-                            params: { id: host.host, hostDetails: host }
-                        }">
-                        {{host.host}}
-                    </router-link>
-                </li>
-            </ul>
+            <template>
+                <div class="host-table" id="host-table">
+                    <b-table striped :items="hosts">
+                    </b-table>
+                </div>
+            </template>
         </div>
         <div class="col-md-6">
             <router-view @refreshData="refreshList"></router-view>
@@ -52,11 +48,3 @@
         }
     };
 </script>
-
-<style>
-    .list {
-        text-align: left;
-        max-width: 450px;
-        margin: auto;
-    }
-</style>
