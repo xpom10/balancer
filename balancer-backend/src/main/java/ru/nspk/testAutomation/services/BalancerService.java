@@ -8,6 +8,8 @@ public interface BalancerService {
 
     List<HostConfiguration> getAll();
 
+    HostConfiguration addHost(HostConfiguration hostConfiguration);
+
     HostConfiguration getAvailableHost();
 
     HostConfiguration changeHostProgress(String host, boolean progress);

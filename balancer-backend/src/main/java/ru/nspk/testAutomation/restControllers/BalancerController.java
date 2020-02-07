@@ -34,6 +34,11 @@ public class BalancerController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.changeHostProgress(host, progress));
     }
 
+    @PostMapping(value = "/api/hosts", produces = "application/json")
+    public ResponseEntity<HostConfiguration> addHost(@RequestBody HostConfiguration hostConfiguration) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.addHost(hostConfiguration));
+    }
+
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<ErrorResponse> exceptionHandler(Exception e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)

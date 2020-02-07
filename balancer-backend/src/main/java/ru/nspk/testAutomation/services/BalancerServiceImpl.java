@@ -32,6 +32,12 @@ public class BalancerServiceImpl implements BalancerService {
     }
 
     @Override
+    public HostConfiguration addHost(HostConfiguration hostConfiguration) {
+        hosts.add(hostConfiguration);
+        return hostConfiguration;
+    }
+
+    @Override
     public HostConfiguration getAvailableHost() {
         return hosts.stream()
                 .filter(host -> !host.isInProgress()).findFirst()

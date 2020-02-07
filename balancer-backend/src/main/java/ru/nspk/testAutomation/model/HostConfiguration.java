@@ -13,6 +13,6 @@ public class HostConfiguration {
 
     private String schema;
 
-    private boolean inProgress;
+    private boolean inProgress = false;
 
 }

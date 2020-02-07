@@ -4,6 +4,8 @@
             <h4>Host List</h4>
             <template>
                 <div class="host-table" id="host-table">
+                    <b-button variant="outline-primary" @click="refreshList">Refresh</b-button>
+                    <AddHost></AddHost>
                     <b-table striped :items="hosts">
                     </b-table>
                 </div>
@@ -17,9 +19,13 @@
 
 <script>
     import http from "../http-common";
+    import AddHost from "./AddHost";
 
     export default {
         name: "HostsList",
+        components: {
+            AddHost
+        },
         data() {
             return {
                 hosts: []
