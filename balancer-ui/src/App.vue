@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="container-fluid">
+    <div id="app">
         <div class="site-info">
             <h1>Balancer</h1>
         </div>
@@ -17,10 +17,3 @@
         }
     };
 </script>
-
-<style>
-    .site-info {
-        color: blue;
-        margin-bottom: 20px;
-    }
-</style>

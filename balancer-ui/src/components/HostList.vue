@@ -1,16 +1,16 @@
 <template>
-    <div class="list row">
-        <div class="position-relative">
+    <div>
+        <div>
             <template>
                 <div>
                     <div class="d-inline p-2" id="host-table">
                         <b-button variant="outline-primary" @click="refreshList">Refresh</b-button>
-                        <AddHost class="d-inline p-2" @refreshData="refreshList"/>
+                        <AddHost class="d-inline p-2" @addHost="addHost"/>
                     </div>
-                    <div id="host-table-id" class="table-responsive">
-                    <b-table class="table" show-empty bordered striped hover :items="hosts" :fields="fields">
-                    </b-table>
-                    </div>
+                    <b-container fluid class="p-2">
+                        <b-table class="bv-example-row" bordered hover :items="hosts" :fields="fields">
+                        </b-table>
+                    </b-container>
                 </div>
             </template>
         </div>
@@ -60,6 +60,10 @@
             },
             refreshList() {
                 this.retrieveHosts();
+            },
+            addHost(e) {
+                console.log(e);
+                this.hosts.push(e)
             }
             /* eslint-enable no-console */
         },
