@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <b-dropdown id="dropdown-form" text="Add" ref="dropdown" class="m-5">
+        <b-dropdown id="dropdown-form" text="Add" ref="dropdown" class="">
             <b-dropdown-form @submit="addHost" @reset="onReset">
-                <b-form-group label="Host" label-for="dropdown-form-host" @submit.stop.prevent>
+
+                <b-form-group label="Host" label-for="dropdown-form-host" @submit.stop.prevent size="lg">
                     <b-form-input
                             v-model="host.host"
                             id="dropdown-form-host"
@@ -18,11 +18,11 @@
                     ></b-form-input>
                 </b-form-group>
 
-                <b-button type="submit" variant="primary" size="sm">Add</b-button>
-                <b-button type="reset" variant="primary" size="sm" class="mb-sm-0">Cancel</b-button>
+                    <b-button type="submit" variant="primary" size="sm" class="mb-sm-0">Add</b-button>
+                    <b-button type="reset" variant="primary" size="sm" class="mb-sm-0">Cancel</b-button>
+
             </b-dropdown-form>
         </b-dropdown>
-    </div>
 </template>
 <script>
     import http from '../http-common'
@@ -38,11 +38,13 @@
             addHost(e) {
                 e.preventDefault();
 
-                this.$refs.dropdown.hide(true);
                 http.post("/hosts", this.host).catch(e => {
                     console.log(e);
                 });
                 this.$emit("refreshData");
+
+                this.host = {};
+                this.$refs.dropdown.hide(true);
             },
             onReset(e) {
                 e.preventDefault();

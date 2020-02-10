@@ -3,18 +3,18 @@
         <div class="site-info">
             <h1>Balancer</h1>
         </div>
-        <nav>
-            <b-button variant="outline-primary" to="/">Hosts</b-button>
-        </nav>
-        <br/>
-        <router-view/>
+        <HostList/>
     </div>
 </template>
 
 <script>
+    import HostList from './components/HostList'
 
     export default {
-        name: "app"
+        name: "app",
+        components: {
+            HostList
+        }
     };
 </script>
 

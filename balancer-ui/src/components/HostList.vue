@@ -1,18 +1,18 @@
 <template>
     <div class="list row">
-        <div class="col-md-6">
-            <h4>Host List</h4>
+        <div class="position-relative">
             <template>
-                <div class="host-table" id="host-table">
-                    <b-button variant="outline-primary" @click="refreshList">Refresh</b-button>
-                    <AddHost></AddHost>
-                    <b-table striped :items="hosts">
+                <div>
+                    <div class="d-inline p-2" id="host-table">
+                        <b-button variant="outline-primary" @click="refreshList">Refresh</b-button>
+                        <AddHost class="d-inline p-2" @refreshData="refreshList"/>
+                    </div>
+                    <div id="host-table-id" class="table-responsive">
+                    <b-table class="table" show-empty bordered striped hover :items="hosts" :fields="fields">
                     </b-table>
+                    </div>
                 </div>
             </template>
-        </div>
-        <div class="col-md-6">
-            <router-view @refreshData="refreshList"></router-view>
         </div>
     </div>
 </template>
@@ -28,6 +28,20 @@
         },
         data() {
             return {
+                fields: [
+                    {
+                        key: 'host',
+                        sortable: true
+                    },
+                    {
+                        key: 'schema',
+                        sortable: true
+                    },
+                    {
+                        key: 'inProgress',
+                        sortable: true
+                    }
+                ],
                 hosts: []
             };
         },
